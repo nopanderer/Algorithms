@@ -2,7 +2,7 @@
 
 Hello World를 출력하시오.
 
-![sushi](sushi.png "sushi")
+![image](sushi.png "sushi")
 
 ## Input
 
