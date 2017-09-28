@@ -1,6 +1,4 @@
-# SAMPLE
-
-## Problem
+# Problem
 
 Hello World를 출력하시오.
 
