@@ -2,7 +2,7 @@
 
 Hello World를 출력하시오.
 
-![Image](https://www.acmicpc.net/JudgeOnline/upload/201011/gg.png)
+![sushi](sushi.png "sushi")
 
 ## Input
 
