@@ -22,12 +22,9 @@
 
 ## Sample Input
 
-9
-
-2
-
-4
-
+9</br>
+2</br>
+4</br>
 7
 
 ## Sample Output
