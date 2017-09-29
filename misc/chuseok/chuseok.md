@@ -42,8 +42,8 @@ DBS 연구실은 추석을 맞아 연구실을 새로운 분위기로 꾸미려�
 ## Sample Input
 
 ```
-1</br>
-MONET</br>
+1
+MONET
 ```
 
 ## Sample Output
