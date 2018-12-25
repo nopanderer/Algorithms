@@ -1,5 +1,7 @@
 # Algorithms
 
+## Binary Search
+
 ## Sort
 * Selection Sort
 * Bubble Sort
