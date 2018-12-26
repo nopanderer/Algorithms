@@ -20,9 +20,9 @@
 
 ## Sample Input
 
-9</br>
-2</br>
-4</br>
+9 
+2 
+4 
 7
 
 ## Sample Output
