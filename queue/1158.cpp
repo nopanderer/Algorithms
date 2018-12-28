@@ -14,23 +14,16 @@ int main(){
   scanf("%d %d",&n,&m);
   for(int i=1;i<=n;i++)
     q.push(i);
-  for(int i=0;i<n;i++){
+  printf("<");
+  for(int i=0;i<n-1;i++){
     for(int j=0;j<m-1;j++){
-      int tmp = q.front();
+      q.push(q.front());
       q.pop();
-      q.push(tmp);
     }
-    r.push(q.front());
+    printf("%d, ",q.front());
     q.pop();
   }
-  
-  printf("<%d",r.front());
-  r.pop();
-  for(int i=0;i<n-1;i++){
-    printf(", %d",r.front());
-    r.pop();
-  }
-  printf(">");
+  printf("%d>",q.front());
 
 
   return 0;
