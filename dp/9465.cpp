@@ -20,7 +20,6 @@ int main(){
       for(int j=0;j<N;j++)
         scanf("%d",&a[i][j]);
 
-    // dp table init
     for(int i=0;i<2;i++)
       for(int j=0;j<N;j++)
         dp[i][j] = -1;
