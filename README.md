@@ -1,5 +1,15 @@
 # Algorithms
 
-## Binary Search
+## I/O
+
+## Stack, Queue, String
 
 ## Dynamic Programming
+
+## Math
+
+## Sorting
+
+## Graph
+
+## Tree
