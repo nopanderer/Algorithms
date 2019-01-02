@@ -4,7 +4,6 @@
  */
 #include <iostream>
 #include <string>
-#include <cmath>
 
 using namespace std;
 
@@ -13,13 +12,12 @@ int main(){
   int b;
   long long result=0;
   cin>>n>>b;
-  int len = n.length();
-  for(int i=0;i<len;i++){
-    int tmp = n[len-1-i]-'0';
-    if(0 <= tmp && tmp <= 9)
-      result += tmp * pow(b,i);
+
+  for(int i=0;i<n.size();i++){
+    if('0' <= n[i] && n[i] <= '9')
+      result = result*b + (n[i] - '0');
     else
-      result += (n[len-1-i]-'A'+10) * pow(b,i);
+      result = result*b + (n[i]-'A'+10);
   }
 
   cout<<result<<endl;
