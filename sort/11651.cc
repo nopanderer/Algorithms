@@ -19,6 +19,7 @@ int main(){
   scanf("%d",&N);
   for(int i=0;i<N;i++)
     scanf("%d %d",&p[i].x,&p[i].y);
+
   sort(p,p+N,cmp);
 
   for(int i=0;i<N;i++)
