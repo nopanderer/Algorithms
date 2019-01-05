@@ -9,7 +9,7 @@
 using namespace std;
 
 bool c[1001];
-vector<vector<int> > a(1001);
+vector<int> a[1001];
 queue<int> q;
 
 void dfs(int v){
