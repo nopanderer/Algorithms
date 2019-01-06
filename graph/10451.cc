@@ -6,20 +6,15 @@
 #include <vector>
 using namespace std;
 
-vector<int> a[1001];
+int a[1001];
 bool c[1001];
 int cnt;
 void dfs(int x){
   c[x] = true;
-  for(int i=0;i<a[x].size();i++){
-    int next = a[x][i];
-    if(c[next] == false){
-      dfs(next);
-    }
-    else{
-      cnt++;
-    }
-  }
+  if(c[a[x]] == false)
+    dfs(a[x]);
+  else
+    return;
 }
 int main(){
   int T,N;
@@ -29,19 +24,18 @@ int main(){
     // clear
     cnt = 0;
     for(int i=1;i<=N;i++){
-      a[i].clear();
+      a[i] = 0;
       c[i] = false;
     }
     // adj list
     for(int i=1;i<=N;i++){
-      int node;
-      scanf("%d",&node);
-      a[i].push_back(node);
+      scanf("%d",&a[i]);
     }
     // dfs
     for(int i=1;i<=N;i++){
       if(c[i] == false){
         dfs(i);
+        cnt++;
       }
     }
     // print # cycles
