@@ -1,4 +1,4 @@
-# Algorithms
+# Problem Solving
 
 * I/O
 * Stack, Queue, String
