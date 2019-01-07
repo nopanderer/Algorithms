@@ -4,7 +4,6 @@
  */
 #include <cstdio>
 #include <queue>
-#include <algorithm>
 using namespace std;
 
 int a[1001][1001];
@@ -12,9 +11,23 @@ int dx[4] = {-1,1,0,0};
 int dy[4] = {0,0,-1,1};
 int M,N;
 int ans;
-void bfs(int x, int y){
-  queue<pair<int,int> > q;
-  q.push(make_pair(x,y));
+queue<pair<int,int> > q;
+int main(){
+  scanf("%d %d",&M,&N);
+  bool flag = false;
+  for(int i=0;i<N;i++){
+    for(int j=0;j<M;j++){
+      scanf("%d",&a[i][j]);
+      if(a[i][j] == 1){
+        flag = true;
+        q.push(make_pair(i,j));
+      }
+    }
+  }
+  if(!flag){
+    printf("0\n");
+    return 0;
+  }
   while(!q.empty()){
     int cx = q.front().first;
     int cy = q.front().second;
@@ -31,18 +44,11 @@ void bfs(int x, int y){
       }
     }
   }
-}
-int main(){
-  scanf("%d %d",&M,&N);
+
   for(int i=0;i<N;i++){
     for(int j=0;j<M;j++){
-      scanf("%d",&a[i][j]);
-    }
-  }
-  for(int i=0;i<N;i++){
-    for(int j=0;j<M;j++){
-      if(a[i][j] == 1){
-        bfs(i,j);
+      if(ans < a[i][j]){
+        ans = a[i][j];
       }
     }
   }
@@ -51,9 +57,6 @@ int main(){
       if(a[i][j] == 0){
         printf("-1\n");
         return 0;
-      }
-      else{
-        ans = max(a[i][j], ans);
       }
     }
   }
