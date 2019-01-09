@@ -3,37 +3,30 @@
  * 1541
  */
 #include <iostream>
-#include <vector>
 using namespace std;
 
 int main(){
   char s[51];
   int num=0;
-  int neg=0;
   int ans=0;
-  bool isPos=true;
+  bool neg=false;
   cin>>s;
   for(int i=0;s[i];i++){
-    if(s[i] == '+'){
-      if(!isPos){
-        num *= -1;
-      }
-      ans += num;
-      num = 0;
-    }
-    else if(s[i] == '-'){
-      if(!isPos){
-        num *= -1;
-      }
-      ans += num;
-      num = 0;
-      isPos = false;
-    }
-    else{
+    if('0' <= s[i] && s[i] <= '9'){
       num = num*10 + s[i]-'0';
     }
+    else{
+      if(neg){
+        num *= -1;
+      }
+      ans += num;
+      num = 0;
+      if(s[i] == '-'){
+        neg = true;
+      }
+    }
   }
-  if(!isPos){
+  if(neg){
     num *= -1;
   }
   ans += num;
