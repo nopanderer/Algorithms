@@ -4,60 +4,56 @@
  */
 #include <cstdio>
 #include <stack>
-
 using namespace std;
 
 int main(){
-  char s[600001];
-  stack<char> ls;
-  stack<char> rs;
-  int tmp;
-  int n;
-
+  char s[100001];
+  stack<char> st1;
+  stack<char> st2;
+  int N;
+  int tp;
   scanf("%s",s);
-  for(int i=0;s[i];i++)
-    ls.push(s[i]);
-
-  scanf("%d",&n);
-  while(n--){
-    char x,y;
-    scanf("\n%c",&x);
-    switch(x){
-      case 'L':
-        if(!ls.empty()){
-          tmp = ls.top();
-          ls.pop();
-          rs.push(tmp);
-        }
-        break;
-      case 'D':
-        if(!rs.empty()){
-          tmp = rs.top();
-          rs.pop();
-          ls.push(tmp);
-        }
-        break;
-      case 'B':
-        if(!ls.empty())
-          ls.pop();
-        break;
-      case 'P':
-        scanf(" %c",&y);
-        ls.push(y);
-        break;
+  scanf("%d",&N);
+  for(int i=0;s[i];i++){
+    st1.push(s[i]);
+  }
+  while(N--){
+    char c1,c2;
+    scanf(" %c",&c1);
+    if(c1 == 'P'){
+      scanf(" %c",&c2);
+      st1.push(c2);
+    }
+    else if(c1 == 'L'){
+      if(!st1.empty()){
+        tp = st1.top();
+        st1.pop();
+        st2.push(tp);
+      }
+    }
+    else if(c1 == 'D'){
+      if(!st2.empty()){
+        tp = st2.top();
+        st2.pop();
+        st1.push(tp);
+      }
+    }
+    else if(c1 == 'B'){
+      if(!st1.empty()){
+        st1.pop();
+      }
     }
   }
-
-  while(!ls.empty()){
-    tmp = ls.top();
-    ls.pop();
-    rs.push(tmp);
+  while(!st1.empty()){
+    tp = st1.top();
+    st1.pop();
+    st2.push(tp);
   }
-  while(!rs.empty()){
-    printf("%c",rs.top());
-    rs.pop();
+  while(!st2.empty()){
+    printf("%c",st2.top());
+    st2.pop();
   }
-
+  printf("\n");
 
   return 0;
 }
