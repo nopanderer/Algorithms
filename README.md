@@ -2,8 +2,9 @@
 
 * I/O
 * Stack, Queue, String
-* Brute Force Search
+* Divide and Conquer
 * Binary Search
+* Brute Force Search
 * Dynamic Programming
 * Greedy Algorithm
 * Math
