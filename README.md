@@ -13,3 +13,4 @@
 * Tree
 * Heap
 * Binary Search Tree
+* Union Find
