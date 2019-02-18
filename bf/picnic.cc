@@ -17,28 +17,27 @@ int c,n,m;
 int a,b;
 bool f[11][11];
 bool check[11];
-int ans;
-void solve(int cnt, int idx){
+int solve(int cnt, int idx){
+  int ret = 0;
   if(cnt == n/2){
-    ans++;
-    return;
+    return 1;
   }
   for(int i=idx;i<n;i++){
     for(int j=i+1;j<n;j++){
       if(check[i] == false && check[j] == false && f[i][j] == true){
         check[i] = check[j] = true;
-        solve(cnt+1, i+1);
+        ret += solve(cnt+1, i+1);
         check[i] = check[j] = false;
       }
     }
   }
+  return ret;
 }
 int main(){
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cin >> c;
   while(c--){
-    ans = 0;
     for(int i=0;i<11;i++){
       check[i] = false;
       for(int j=0;j<11;j++){
@@ -51,8 +50,7 @@ int main(){
       f[a][b] = f[b][a] = true;
     }
 
-    solve(0,0);
-    cout << ans << '\n';
+    cout << solve(0,0) << '\n';
   }
 
   return 0;
