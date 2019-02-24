@@ -43,14 +43,10 @@ int main(){
   cin >> m >> n >> k;
   for(int i=0;i<k;i++){
     int x1,y1,x2,y2;
-    cin >> x1 >> y1 >> x2 >> y2;
-    int cx1 = m-1-y1;
-    int cy1 = x1;
-    int cx2 = m-1-y2+1;
-    int cy2 = x2-1;
+    cin >> y1 >> x1 >> y2 >> x2;
 
-    for(int X=cx2;X<=cx1;X++){
-      for(int Y=cy1;Y<=cy2;Y++){
+    for(int X=x1;X<x2;X++){
+      for(int Y=y1;Y<y2;Y++){
         a[X][Y] = 1;
       }
     }
@@ -67,12 +63,15 @@ int main(){
     }
   }
 
-  cout << cnt << '\n';
   sort(ans.begin(), ans.end());
-  for(auto &p : ans){
+  cout << cnt << '\n';
+  for(auto &p : ans)
     cout << p << ' ';
-  }
   cout << '\n';
+
+
 
   return 0;
 }
+// 굳이 각 좌표를 매핑할 필요 없음
+// x y 좌표만 바꿔서 넣어주면 구성은 같음
