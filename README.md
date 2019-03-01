@@ -7,6 +7,7 @@
 * Brute Force Search
 * Dynamic Programming
 * Greedy Algorithm
+* Simulation
 * Math
 * Sorting
 * Graph
