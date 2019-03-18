@@ -115,15 +115,15 @@ void solve(int x, int y){
 int main(){
 	int test_case;
 	int T;
-  scanf("%i",&T);
+  scanf("%d",&T);
 	for(test_case = 1; test_case <= T; ++test_case){
     memset(c, 0, sizeof(c));
     ans = 0;
 
-    scanf("%i %i %i %i %i",&N,&M,&R,&C,&L);
+    scanf("%d %d %d %d %d",&N,&M,&R,&C,&L);
     for(int i=0;i<N;i++){
       for(int j=0;j<M;j++){
-        scanf("%i",&a[i][j]);
+        scanf("%d",&a[i][j]);
       }
     }
 
@@ -137,7 +137,7 @@ int main(){
       }
     }
 
-    printf("#%i %i\n",test_case,ans);
+    printf("#%d %d\n",test_case,ans);
 
   }
   return 0;
